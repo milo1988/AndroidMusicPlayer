@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoOverlay="false"
+        sothree:umanoDragView="@+id/dragView">
+
+        <!-- MAIN CONTENT -->
+       <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="?android:attr/actionBarSize"
+            android:orientation="vertical"
+            android:clickable="true"
+			android:focusable="false"
+        	android:background="@color/background_grey"
+			android:focusableInTouchMode="true">
+            
+            
+            <com.viewpagerindicator.TabPageIndicator
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+        		android:background="@color/white"
+		        android:layout_height="@dimen/tab_height"
+                 />
+            <!-- android:background="@drawable/base_action_bar_bg" -->
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+         <!-- SLIDING LAYOUT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="false"
+            android:id="@+id/dragView">
+            
+              <LinearLayout 
+				    android:id="@+id/bottom_action_bar_container2"
+				    android:layout_width="match_parent"
+				    android:layout_height="@dimen/bottom_action_bar_height"
+				    android:layout_gravity="top"
+				    android:orientation="vertical" >
+				
+				<fragment android:name="com.huawei.music.fragment.BottomActionBarFragment"
+		            android:id="@+id/bottomactionbar_new"
+		            android:layout_weight="1"
+					android:layout_width="match_parent"
+            		android:layout_height="match_parent" /> 
+            		
+			</LinearLayout>
+		
+         
+        <fragment android:name="com.huawei.music.fragment.AudioPlayerFragment"
+	            android:id="@+id/audio_player_view"
+	            android:layout_weight="1"
+				android:layout_width="match_parent"
+           		android:layout_height="match_parent" /> 
+      </LinearLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</RelativeLayout>
