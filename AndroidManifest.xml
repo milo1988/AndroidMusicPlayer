@@ -82,7 +82,7 @@
         
         <!--addToList menu -->
          <activity
-            android:name=".menu.Playlicom.huawei.music.menu.PlaylistDialog"  
+            android:name="com.huawei.music.menu.PlaylistDialog"  
             android:label="@string/rename_playlist"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
             <intent-filter>
@@ -99,7 +99,7 @@
         
         <!--addToList menu -->
          <activity
-            android:name="com.huawei.xcom.huawei.music.menu.PlaylistPicker"  
+            android:name="com.huawei.music.menu.PlaylistPicker"  
             android:icon="@drawable/ic_launcher"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
             <intent-filter>
@@ -109,7 +109,8 @@
         </activity>
         
          <!-- Media button receiver -->
-        <receiver android:name = "com.huawei.music.service.MediaButtonIntentReceiverer"  >
+        <receiver 
+            android:name = "com.huawei.music.service.MediaButtonIntentReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
                 <action android:name="android.media.AUDIO_BECOMING_NOISY" />
@@ -118,7 +119,7 @@
         
          <!-- Music service -->
         <service
-            android:name = "com.huawei.music.service.ApolloServicece"
+            android:name = "com.huawei.music.service.ApolloService"
             android:label="@string/app_name"
             android:process=":main" />
         
